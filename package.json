@@ -1,19 +1,19 @@
 {
-  "name": "livestamp",
+  "name": "livestamp-calendar",
   "version": "2.0.0",
   "main": "livestamp",
   "repository": {
     "type": "git",
     "url": "git://github.com/mattbradley/livestampjs.git"
   },
-  "description": "A simple, unobtrusive jQuery plugin that provides auto-updating timeago text to your timestamped HTML elements using Moment.js.",
+  "description": "A simple, unobtrusive jQuery plugin that provides auto-updating timeago/calendar/date text to your timestamped HTML elements using Moment.js.",
   "keywords": ["livestamp", "timestamp", "timeago"],
-  "homepage": "http://mattbradley.github.com/livestampjs",
-  "bugs": "https://github.com/mattbradley/livestampjs/issues",
+  "homepage": "https://github.com/millar/livestampjs-calendar",
+  "bugs": "https://github.com/millar/livestampjs-calendar/issues",
   "license": "MIT",
-  "author": {
-      "name": "Matt Bradley",
-      "url": "https://twitter.com/mattbradley"
+  "authors": {
+      "Matt Bradley <https://twitter.com/mattbradley>",
+      "Sam Millar <https://millar.io>"
   },
   "devDependencies": {
     "grunt": "~0.4.2",

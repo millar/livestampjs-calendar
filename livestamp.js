@@ -56,13 +56,24 @@
           toRemove.push(this);
         else if (moment.isMoment(data.moment)) {
           var from = $this.html(),
-              to = data.moment.fromNow();
+              delta = Math.abs(moment().diff(data.moment) / 1000);
+
+          if (delta < 23 * 60 * 60) {
+              var to = data.moment.fromNow();
+          } else if (delta < 23 * 60 * 60 * 7) {
+              var to = data.moment.calendar();
+          } else if (data.moment.year() == moment().year()) {
+              var to = data.moment.format('LLL');
+          } else {
+              var to = data.moment.format('ll');
+          }
 
           if (from != to) {
             var e = $.Event('change.livestamp');
             $this.trigger(e, [from, to]);
             if (!e.isDefaultPrevented())
               $this.html(to);
+              $this.attr('title', data.moment.format('LLLL'));
           }
         }
       });
