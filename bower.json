@@ -1,6 +1,6 @@
 {
   "name": "livestamp",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "keywords": ["livestamp", "timestamp", "timeago"],
   "ignore": [],
   "main": "livestamp.js",

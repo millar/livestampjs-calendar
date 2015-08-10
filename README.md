@@ -7,8 +7,8 @@ your timestamped HTML elements using [Moment.js](http://momentjs.com).
 #### Changes by [millar](https://github.com/millar)
 This library will make different calls to Moment.js based on the value of the timestamp from the current time.
 
-- Within 23 hours: `fromNow()`
-- Within 6.7 days: `calendar()`
+- In less than 6.7 days: `calendar()`
+- Within 26 days: `fromNow()`
 - Same year: `format('lll')`
 - Otherwise: `format('ll')`
 

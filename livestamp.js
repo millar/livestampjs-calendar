@@ -56,12 +56,12 @@
           toRemove.push(this);
         else if (moment.isMoment(data.moment)) {
           var from = $this.html(),
-              delta = Math.abs(moment().diff(data.moment) / 1000);
+              delta = moment().diff(data.moment) / 1000;
 
-          if (delta < 23 * 60 * 60) {
-              var to = data.moment.fromNow();
-          } else if (delta < 23 * 60 * 60 * 7) {
+          if (delta < 0 && -delta < 23 * 60 * 60 * 7){
               var to = data.moment.calendar();
+          } else if (delta >= 0 && delta < 24 * 60 * 60 * moment.relativeTimeThreshold('d')) {
+              var to = data.moment.fromNow();
           } else if (data.moment.year() == moment().year()) {
               var to = data.moment.format('LLL');
           } else {

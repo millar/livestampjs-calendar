@@ -2,7 +2,7 @@
   "name": "livestamp",
   "repository": "millar/livestampjs-calendar",
   "description": "A simple, unobtrusive jQuery plugin that provides auto-updating timeago/calendar/date text to your timestamped HTML elements using Moment.js.",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "keywords": ["livestamp", "timestamp", "timeago"],
   "dependencies": {},
   "development": {},
