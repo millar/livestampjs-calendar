@@ -5,12 +5,14 @@ A simple, unobtrusive jQuery plugin that provides auto-updating timeago/calendar
 your timestamped HTML elements using [Moment.js](http://momentjs.com).
 
 #### Changes by [millar](https://github.com/millar)
-This library will make different calls to Moment.js based on the value of the timestamp from the current time.
+This library will make different calls to Moment.js based on the difference of the timestamp from the current time.
 
 - In less than 6.7 days: `calendar()`
 - Within 26 days: `fromNow()`
 - Same year: `format('lll')`
 - Otherwise: `format('ll')`
+
+This package will also localize dates but in doing so requires that the values be passed in UTC.
 
 Usage
 -----

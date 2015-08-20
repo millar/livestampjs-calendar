@@ -24,10 +24,10 @@
     $el.removeAttr('data-livestamp')
       .removeData('livestamp');
 
-    timestamp = moment(timestamp);
+    timestamp = moment.utc(timestamp).local();
     if (moment.isMoment(timestamp) && !isNaN(+timestamp)) {
       var newData = $.extend({ }, { 'original': $el.contents() }, oldData);
-      newData.moment = moment(timestamp);
+      newData.moment = moment.utc(timestamp).local();
 
       $el.data('livestampdata', newData).empty();
       $livestamps.push($el[0]);
@@ -59,13 +59,13 @@
               delta = moment().diff(data.moment) / 1000;
 
           if (delta < 0 && -delta < 23 * 60 * 60 * 7){
-              var to = data.moment.calendar();
+              var to = data.moment.local().calendar();
           } else if (delta >= 0 && delta < 24 * 60 * 60 * moment.relativeTimeThreshold('d')) {
-              var to = data.moment.fromNow();
+              var to = data.moment.local().fromNow();
           } else if (data.moment.year() == moment().year()) {
-              var to = data.moment.format('LLL');
+              var to = data.moment.local().format('LLL');
           } else {
-              var to = data.moment.format('ll');
+              var to = data.moment.local().format('ll');
           }
 
           if (from != to) {
@@ -73,7 +73,7 @@
             $this.trigger(e, [from, to]);
             if (!e.isDefaultPrevented())
               $this.html(to);
-              $this.attr('title', data.moment.format('LLLL'));
+              $this.attr('title', data.moment.local().format('LLLL'));
           }
         }
       });
@@ -102,7 +102,7 @@
     add: function($el, timestamp) {
       if (typeof timestamp == 'number')
         timestamp *= 1e3;
-      timestamp = moment(timestamp);
+      timestamp = moment.utc(timestamp).local();
 
       if (moment.isMoment(timestamp) && !isNaN(+timestamp)) {
         $el.each(function() {
